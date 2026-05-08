@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morgan Talent Advisor | 人才咨询与招聘顾问</title>
-    <meta name="description" content="Morgan Talent Advisor — 专业人才咨询与高端招聘服务，为企业精准匹配核心人才。">
+    <title>Morgan Talent Advisor | Executive Search &amp; Leadership Advisory</title>
+    <meta name="description" content="Morgan Talent Advisor — a premier executive search and leadership advisory firm based in New York, serving high-growth companies across technology, finance, law, and professional services.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
             --primary: #1a3a5c;
             --accent: #c8a45a;
@@ -17,9 +16,8 @@
             --text-light: #6b7280;
             --border: #e5e7eb;
         }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: var(--text);
             line-height: 1.7;
             background: var(--bg);
@@ -28,7 +26,7 @@
         /* Navigation */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.97);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             transition: box-shadow 0.3s;
@@ -40,68 +38,114 @@
             padding: 0.9rem 2rem;
         }
         .logo {
-            font-size: 1.15rem; font-weight: 700; letter-spacing: 0.04em;
+            font-size: 1.1rem; font-weight: 700; letter-spacing: 0.06em;
             color: var(--primary); text-decoration: none;
         }
         .logo span { color: var(--accent); }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a {
-            text-decoration: none; color: var(--text-light); font-size: 0.9rem;
+            text-decoration: none; color: var(--text-light); font-size: 0.88rem;
             transition: color 0.2s;
         }
         .nav-links a:hover { color: var(--primary); }
 
         /* Hero */
         .hero {
-            min-height: 85vh; display: flex; align-items: center; justify-content: center;
+            min-height: 82vh; display: flex; align-items: center; justify-content: center;
             background: linear-gradient(165deg, var(--primary) 0%, #0f2640 100%);
-            color: #fff; text-align: center; padding: 6rem 2rem 4rem;
+            color: #fff; text-align: center; padding: 6rem 2rem 3rem;
         }
+        .hero-inner { max-width: 700px; }
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 300;
-            letter-spacing: 0.12em; margin-bottom: 1.2rem;
+            font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 300;
+            letter-spacing: 0.14em; margin-bottom: 0.6rem;
         }
         .hero h1 strong { font-weight: 700; }
-        .hero p {
-            font-size: 1.1rem; color: rgba(255,255,255,0.75);
-            max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.8;
+        .hero-tagline {
+            font-size: 0.95rem; color: rgba(255,255,255,0.6);
+            letter-spacing: 0.08em; margin-bottom: 1.2rem;
         }
         .hero-line {
             width: 50px; height: 1px; background: var(--accent);
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.2rem;
+        }
+
+        /* ── Ticker ── */
+        .ticker-wrap {
+            background: rgba(0,0,0,0.25);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-top: 2rem;
+            overflow: hidden;
+            padding: 0.7rem 0;
+        }
+        .ticker-label {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+        .ticker-track {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker-scroll 90s linear infinite;
+        }
+        .ticker-track:hover { animation-play-state: paused; }
+        .ticker-item {
+            display: inline-block;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.7);
+            margin-right: 3rem;
+            vertical-align: middle;
+        }
+        .ticker-item strong { color: rgba(255,255,255,0.95); }
+        .ticker-item .date {
+            color: var(--accent);
+            font-size: 0.72rem;
+            margin-right: 0.4rem;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* Sections */
         section { padding: 5rem 2rem; }
         .section-inner { max-width: 1100px; margin: 0 auto; }
         .section-title {
-            font-size: 1.6rem; font-weight: 600; color: var(--primary);
-            margin-bottom: 0.6rem; letter-spacing: 0.02em;
+            font-size: 1.5rem; font-weight: 600; color: var(--primary);
+            margin-bottom: 0.5rem; letter-spacing: 0.02em;
         }
         .section-subtitle {
-            color: var(--text-light); font-size: 0.95rem; margin-bottom: 3rem;
+            color: var(--text-light); font-size: 0.92rem; margin-bottom: 2.8rem;
         }
-        .accent-line { width: 40px; height: 2px; background: var(--accent); margin-bottom: 1.2rem; }
+        .accent-line { width: 40px; height: 2px; background: var(--accent); margin-bottom: 1rem; }
 
         /* About */
         .about-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
         }
-        .about-text p { margin-bottom: 1rem; color: var(--text-light); }
-        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .about-text p { margin-bottom: 1rem; color: var(--text-light); font-size: 0.92rem; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
         .stat-card {
-            background: var(--bg-alt); border-radius: 8px; padding: 1.5rem;
+            background: var(--bg-alt); border-radius: 8px; padding: 1.4rem;
             text-align: center;
         }
-        .stat-num { font-size: 2rem; font-weight: 700; color: var(--primary); }
-        .stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 0.3rem; }
+        .stat-num { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.78rem; color: var(--text-light); margin-top: 0.2rem; }
 
         /* Services */
         .services-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem;
         }
         .service-card {
-            background: var(--bg-alt); border-radius: 10px; padding: 2rem 1.5rem;
+            background: var(--bg-alt); border-radius: 10px; padding: 1.8rem 1.4rem;
             border: 1px solid transparent; transition: all 0.3s;
         }
         .service-card:hover {
@@ -109,54 +153,65 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.06);
         }
         .service-icon {
-            width: 44px; height: 44px; border-radius: 8px;
+            width: 42px; height: 42px; border-radius: 8px;
             background: linear-gradient(135deg, var(--primary), #2a5a8c);
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.2rem; font-size: 1.2rem; color: #fff;
+            margin-bottom: 1rem; font-size: 1.1rem; color: #fff;
         }
-        .service-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; color: var(--primary); }
-        .service-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; }
+        .service-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--primary); }
+        .service-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; }
 
-        /* Advantage */
-        .advantages { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        /* Industries */
+        .industries-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+        .industry-card {
+            background: var(--bg-alt); border-radius: 8px; padding: 1.5rem 1rem;
+            text-align: center; border: 1px solid transparent; transition: all 0.3s;
+        }
+        .industry-card:hover { border-color: var(--accent); }
+        .industry-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+        .industry-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--primary); margin-bottom: 0.3rem; }
+        .industry-card p { font-size: 0.78rem; color: var(--text-light); }
+
+        /* Advantages */
+        .advantages { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
         .advantages li {
-            display: flex; align-items: flex-start; gap: 0.8rem;
-            padding: 1rem; background: var(--bg-alt); border-radius: 8px;
-            font-size: 0.9rem; color: var(--text-light);
+            display: flex; align-items: flex-start; gap: 0.7rem;
+            padding: 0.9rem; background: var(--bg-alt); border-radius: 8px;
+            font-size: 0.88rem; color: var(--text-light);
         }
         .advantages li::before {
-            content: "✓"; flex-shrink: 0; width: 24px; height: 24px;
+            content: "✓"; flex-shrink: 0; width: 22px; height: 22px;
             background: var(--accent); color: #fff; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 0.75rem; font-weight: 700;
+            font-size: 0.7rem; font-weight: 700;
         }
 
         /* Contact */
         .contact-section { background: var(--bg-alt); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+        .contact-info { display: flex; flex-direction: column; gap: 1.3rem; }
         .contact-item { display: flex; align-items: center; gap: 1rem; }
         .contact-icon {
-            width: 40px; height: 40px; border-radius: 8px; background: var(--primary);
-            display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem;
+            width: 38px; height: 38px; border-radius: 8px; background: var(--primary);
+            display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.95rem;
         }
-        .contact-label { font-size: 0.8rem; color: var(--text-light); }
-        .contact-value { font-size: 0.95rem; color: var(--text); font-weight: 500; }
+        .contact-label { font-size: 0.78rem; color: var(--text-light); }
+        .contact-value { font-size: 0.92rem; color: var(--text); font-weight: 500; }
 
         /* Footer */
         footer {
-            background: var(--primary); color: rgba(255,255,255,0.6);
-            text-align: center; padding: 2rem;
-            font-size: 0.82rem;
+            background: var(--primary); color: rgba(255,255,255,0.5);
+            text-align: center; padding: 1.8rem;
+            font-size: 0.8rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .about-grid, .services-grid, .contact-grid { grid-template-columns: 1fr; }
+            .industries-grid { grid-template-columns: 1fr 1fr; }
             .stat-grid { grid-template-columns: 1fr 1fr; }
             .advantages { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -167,20 +222,31 @@
     <div class="nav-inner">
         <a href="#" class="logo">MORGAN<span>TALENT</span></a>
         <ul class="nav-links">
-            <li><a href="#about">关于我们</a></li>
-            <li><a href="#services">服务领域</a></li>
-            <li><a href="#advantages">核心优势</a></li>
-            <li><a href="#contact">联系我们</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#advantages">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-    <div>
+    <div class="hero-inner">
         <h1><strong>MORGAN</strong> TALENT ADVISOR</h1>
+        <p class="hero-tagline">EXECUTIVE SEARCH &amp; LEADERSHIP ADVISORY</p>
         <div class="hero-line"></div>
-        <p>精准洞察人才价值，为企业构建可持续的竞争优势。<br>专注高端人才寻访与组织效能提升。</p>
+        <p style="font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 550px; margin: 0 auto; line-height: 1.8;">
+            Connecting visionary organizations with exceptional leaders across technology, finance, law, and professional services.
+        </p>
+
+        <!-- Ticker -->
+        <div class="ticker-wrap">
+            <div class="ticker-track" id="ticker">
+                <!-- items will be duplicated by JS for seamless loop -->
+            </div>
+        </div>
     </div>
 </section>
 
@@ -188,30 +254,30 @@
 <section id="about">
     <div class="section-inner">
         <div class="accent-line"></div>
-        <h2 class="section-title">关于我们</h2>
-        <p class="section-subtitle">深耕人才咨询领域，以专业视角连接人与组织</p>
+        <h2 class="section-title">Who We Are</h2>
+        <p class="section-subtitle">A boutique executive search firm built for the velocity of modern business</p>
         <div class="about-grid">
             <div class="about-text">
-                <p>Morgan Talent Advisor 是一家专业的人才咨询与高端招聘服务机构，致力于为成长型企业精准匹配核心管理人才和专业技术人才。</p>
-                <p>我们以行业深度理解为基础，结合结构化评估体系，为企业提供从人才战略规划到关键岗位落地的全链条服务。</p>
-                <p>团队拥有丰富的跨行业猎头经验，覆盖科技、金融、制造、消费品等核心领域，累计为超过百家企业完成关键岗位交付。</p>
+                <p>Morgan Talent Advisor is a New York-based executive search and leadership advisory firm specializing in identifying and placing high-impact leaders across the innovation economy.</p>
+                <p>We partner with high-growth technology companies, established financial institutions, elite law firms, and Big Four professional services firms to build C-suite and VP-level teams that drive measurable outcomes.</p>
+                <p>Our advisors combine deep domain expertise with a proprietary assessment methodology, enabling precise alignment between candidate capabilities and organizational needs — from Silicon Valley to Wall Street.</p>
             </div>
             <div class="stat-grid">
                 <div class="stat-card">
-                    <div class="stat-num">10+</div>
-                    <div class="stat-label">年行业深耕</div>
+                    <div class="stat-num">200+</div>
+                    <div class="stat-label">Executive Placements</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-num">100+</div>
-                    <div class="stat-label">合作企业</div>
+                    <div class="stat-num">90%</div>
+                    <div class="stat-label">Candidate Retention at 24 Mo.</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-num">85%</div>
-                    <div class="stat-label">候选人留存率</div>
+                    <div class="stat-num">18 Days</div>
+                    <div class="stat-label">Avg. Shortlist Delivery</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-num">21天</div>
-                    <div class="stat-label">平均交付周期</div>
+                    <div class="stat-num">Fortune 500</div>
+                    <div class="stat-label">To High-Growth Startups</div>
                 </div>
             </div>
         </div>
@@ -222,56 +288,87 @@
 <section id="services" style="background: var(--bg-alt);">
     <div class="section-inner">
         <div class="accent-line"></div>
-        <h2 class="section-title">服务领域</h2>
-        <p class="section-subtitle">围绕企业人才需求的全周期解决方案</p>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">End-to-end talent solutions for the leadership-driven organization</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">◈</div>
-                <h3>高管寻访</h3>
-                <p>针对 C-Suite 及 VP 级别核心管理岗位，提供精准的定向寻访与深度背景评估。</p>
+                <h3>C-Suite Executive Search</h3>
+                <p>Targeted identification and recruitment of CEO, CFO, CTO, COO, and General Counsel candidates for public and private companies.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">◉</div>
-                <h3>中高端招聘</h3>
-                <p>覆盖总监、经理级关键技术与管理岗位，快速响应批量或紧急招聘需求。</p>
+                <h3>VP &amp; Director-Level Placement</h3>
+                <p>Rapid, high-quality placement of VP and Director-level leaders across engineering, product, finance, and operations functions.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">◇</div>
-                <h3>人才战略咨询</h3>
-                <p>从组织架构设计到人才盘点，帮助企业搭建与业务战略匹配的人才体系。</p>
+                <h3>Leadership Advisory</h3>
+                <p>Board effectiveness reviews, succession planning, and organizational design consulting for companies navigating transformation.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">△</div>
-                <h3>行业人才洞察</h3>
-                <p>定期输出行业薪酬报告与人才趋势分析，支持企业的人才决策与雇主品牌建设。</p>
+                <h3>Market Intelligence</h3>
+                <p>Compensation benchmarking, talent mapping, and competitive landscape analysis to inform hiring strategy and employer positioning.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">□</div>
-                <h3>背景调查服务</h3>
-                <p>对候选人进行结构化背景核实与职业诚信调查，降低企业的用人风险。</p>
+                <h3>Diversity &amp; Inclusion Search</h3>
+                <p>Dedicated diversity-focused executive searches, ensuring candidate slates reflect the breadth of exceptional talent available.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">○</div>
-                <h3>入职融入支持</h3>
-                <p>为候选人提供入职后 90 天融入辅导，显著提升留存率与岗位匹配度。</p>
+                <h3>Onboarding Integration</h3>
+                <p>Structured 90-day integration support for placed executives, accelerating time-to-impact and strengthening long-term retention.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Industries -->
+<section id="industries">
+    <div class="section-inner">
+        <div class="accent-line"></div>
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-subtitle">Deep expertise where talent decisions matter most</p>
+        <div class="industries-grid">
+            <div class="industry-card">
+                <div class="industry-icon">⌘</div>
+                <h4>Technology</h4>
+                <p>AI/ML, SaaS, semiconductors, enterprise infrastructure</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">$</div>
+                <h4>Financial Services</h4>
+                <p>Investment banking, asset management, fintech, private equity</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">§</div>
+                <h4>Legal</h4>
+                <p>Am Law 100 firms, in-house counsel, litigation &amp; transactional</p>
+            </div>
+            <div class="industry-card">
+                <div class="industry-icon">✎</div>
+                <h4>Professional Services</h4>
+                <p>Big Four accounting, management consulting, advisory</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Advantages -->
-<section id="advantages">
+<section id="advantages" style="background: var(--bg-alt);">
     <div class="section-inner">
         <div class="accent-line"></div>
-        <h2 class="section-title">核心优势</h2>
-        <p class="section-subtitle">为什么选择 Morgan Talent Advisor</p>
+        <h2 class="section-title">Why Morgan Talent Advisor</h2>
+        <p class="section-subtitle">What distinguishes our approach</p>
         <ul class="advantages">
-            <li>行业顾问团队，深入理解各领域岗位需求与人才画像</li>
-            <li>自研人才数据库，覆盖超过 50 万活跃中高端候选人</li>
-            <li>结构化评估体系，从能力、文化、动机三维度精准匹配</li>
-            <li>严格的保密机制，保障企业商业信息安全</li>
-            <li>全程项目管理，从需求对接到入职跟进的一站式服务</li>
-            <li>灵活的合作模式，支持单岗位猎头与年度框架合作</li>
+            <li>Sector-specialized advisors with hands-on industry experience, not generalists</li>
+            <li>Proprietary candidate database with 500K+ pre-vetted executive profiles</li>
+            <li>Structured assessment across competence, cultural fit, and motivational alignment</li>
+            <li>Rigorous confidentiality protocols safeguarding client and candidate interests</li>
+            <li>End-to-end engagement management from brief to post-placement follow-through</li>
+            <li>Flexible engagement models — retained search, contingent, or annual partnership</li>
         </ul>
     </div>
 </section>
@@ -280,38 +377,38 @@
 <section id="contact" class="contact-section">
     <div class="section-inner">
         <div class="accent-line"></div>
-        <h2 class="section-title">联系我们</h2>
-        <p class="section-subtitle">期待与您探讨人才战略</p>
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">We'd welcome the conversation</p>
         <div class="contact-grid">
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">✉</div>
                     <div>
-                        <div class="contact-label">电子邮件</div>
-                        <div class="contact-value">contact@morgantalentadvisor.com</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">inquiries@morgantalentadvisor.com</div>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">☏</div>
                     <div>
-                        <div class="contact-label">联系电话</div>
-                        <div class="contact-value">+86 (020) XXXX-XXXX</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+1 (212) 876-4913</div>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">⊙</div>
                     <div>
-                        <div class="contact-label">办公地址</div>
-                        <div class="contact-value">中国 · 广州</div>
+                        <div class="contact-label">Office</div>
+                        <div class="contact-value">Midtown Manhattan, New York, NY</div>
                     </div>
                 </div>
             </div>
             <div style="background: var(--bg); border-radius: 10px; padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 200px; border: 1px solid var(--border);">
                 <div style="text-align: center; color: var(--text-light); font-size: 0.9rem;">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--primary);">MORGAN</div>
-                    <div style="font-size: 0.85rem; letter-spacing: 0.15em;">TALENT ADVISOR</div>
-                    <div style="width: 30px; height: 1px; background: var(--accent); margin: 1rem auto;"></div>
-                    <div style="font-size: 0.82rem;">精准洞察人才价值</div>
+                    <div style="font-size: 2.2rem; margin-bottom: 0.6rem; color: var(--primary); font-weight: 700; letter-spacing: 0.08em;">MORGAN</div>
+                    <div style="font-size: 0.82rem; letter-spacing: 0.18em;">TALENT ADVISOR</div>
+                    <div style="width: 30px; height: 1px; background: var(--accent); margin: 0.8rem auto;"></div>
+                    <div style="font-size: 0.8rem;">Connecting Vision with Leadership</div>
                 </div>
             </div>
         </div>
@@ -320,18 +417,57 @@
 
 <!-- Footer -->
 <footer>
-    <p>© 2026 Morgan Talent Advisor. All rights reserved.</p>
+    <p>&copy; 2026 Morgan Talent Advisor. All rights reserved.</p>
 </footer>
 
 <script>
-window.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+// ── Ticker Data ──
+const tickerItems = [
+    { date: "Jan 2026", text: "<strong>Eric Andersen</strong> named President & CEO-elect of <strong>AIG</strong>, joining from Aon" },
+    { date: "Jan 2026", text: "<strong>Anand Varadarajan</strong> appointed EVP & CTO of <strong>Starbucks</strong>, formerly Amazon VP" },
+    { date: "Jan 2026", text: "<strong>Lip-Bu Tan</strong> named CEO of <strong>Intel</strong>, succeeding Pat Gelsinger" },
+    { date: "Jan 2026", text: "<strong>Greg Abel</strong> succeeds Warren Buffett as CEO of <strong>Berkshire Hathaway</strong>" },
+    { date: "Dec 2025", text: "<strong>Andre Argenton</strong> promoted to Chief Technology & Sustainability Officer at <strong>Dow</strong>" },
+    { date: "Dec 2025", text: "<strong>Tim Peterson</strong> joins <strong>Exelon</strong> as EVP & Chief Customer and Technology Officer" },
+    { date: "Nov 2025", text: "<strong>Deepa Soni</strong> appointed EVP & CIO at <strong>New York Life Insurance</strong>" },
+    { date: "Oct 2025", text: "<strong>Ronnie Pruitt</strong> promoted to CEO of <strong>Vulcan Materials</strong>" },
+    { date: "Sep 2025", text: "Meta recruits <strong>Trapit Bansal</strong> from OpenAI to lead AI reasoning initiatives" },
+    { date: "Aug 2025", text: "<strong>Cindy Stoddard</strong> joins <strong>Intel</strong> as SVP & CIO, departing Adobe" },
+    { date: "Jul 2025", text: "<strong>Mira Murati</strong> raises $2B seed round for <strong>Thinking Machines Lab</strong>" },
+    { date: "Jul 2025", text: "<strong>John Schulman</strong> and 19 ex-OpenAI researchers join Thinking Machines Lab" },
+    { date: "Jun 2025", text: "Meta hires four senior researchers from OpenAI: <strong>Zhao, Yu, Bi, Ren</strong>" },
+    { date: "Jun 2025", text: "<strong>Alexandr Wang</strong> joins Meta's superintelligence team from Scale AI" },
+    { date: "May 2025", text: "<strong>Tom Anfuso</strong> named SVP & CTO at <strong>Lincoln National</strong>, departing JPMorgan Chase" },
+    { date: "Apr 2025", text: "<strong>Jake Perlman</strong> promoted to EVP & CIO at <strong>Charter Communications</strong>" },
+    { date: "Mar 2025", text: "<strong>Cathy Smith</strong> appointed CFO of <strong>Starbucks</strong>, former Nordstrom CFO" },
+    { date: "Feb 2025", text: "<strong>Lucas Beyer, Alexander Kolesnikov, Xiaohua Zhai</strong> leave OpenAI for Meta AI" },
+    { date: "Jan 2025", text: "<strong>Kelly Dilts</strong> named CFO of <strong>Nordstrom</strong>, departing Dollar General" },
+    { date: "Jan 2025", text: "Hogan Lovells promotes 28 partners across corporate, finance, and technology practices" },
+];
+
+// Build ticker HTML (duplicated for seamless loop)
+const tickerEl = document.getElementById("ticker");
+let html = '<span class="ticker-label">NEWS</span>';
+tickerItems.forEach(item => {
+    html += `<span class="ticker-item"><span class="date">${item.date}</span>${item.text}</span>`;
 });
+// Duplicate for seamless scroll
+html += '<span class="ticker-label">NEWS</span>';
+tickerItems.forEach(item => {
+    html += `<span class="ticker-item"><span class="date">${item.date}</span>${item.text}</span>`;
+});
+tickerEl.innerHTML = html;
+
+// Nav scroll effect
+window.addEventListener("scroll", () => {
+    document.getElementById("nav").classList.toggle("scrolled", window.scrollY > 50);
+});
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
+    a.addEventListener("click", e => {
         e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const t = document.querySelector(a.getAttribute("href"));
+        if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 });
 </script>
